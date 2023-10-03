@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+
+	 
+	<!-- Bean using default constructor-->
+
+	<bean id="a1" class="com.cg.demo.entity.Account">
+
+	 	
+
+	 </bean>
+
+	
+
+	 <!-- Bean using property injection-->
+
+	<bean id="a2" class="com.cg.demo.entity.Account">
+
+	 	<property name="accountId" value="101"></property>
+
+	 	<property name="name" value="Suresh"></property>
+
+	 	<property name="policy" ref="p1"></property>
+
+	 	<property name="allTransactions">
+
+			 <list>
+
+				 <ref bean="t1"/>
+
+				 <ref bean="t2"/>
+
+				 <ref bean="t3"/>
+
+			 </list>
+
+		 </property>
+
+	 </bean>
+
+	
+
+	 <bean id="a3" class="com.cg.demo.entity.Account">
+
+	 	<constructor-arg name="accountId" value="102"></constructor-arg>
+
+	 	<constructor-arg name="name" value="Saran"></constructor-arg>
+
+	 	<constructor-arg name="policy" ref="p1"></constructor-arg>
+
+	 	<constructor-arg name="allTransactions">
+
+			 <list>
+
+				 <ref bean="t1"/>
+
+				 <ref bean="t2"/>
+
+				 <ref bean="t3"/>
+
+			 </list>
+
+		 </constructor-arg>
+
+	 </bean>
+
+	
+
+	 <bean id="p1" class="com.cg.demo.entity.Policy">
+
+		 <property name="policyName" value="HDFC"></property>
+
+	 </bean>
+
+	
+
+	 <bean id="t1" class="com.cg.demo.entity.Transaction">
+
+		 <property name="amount" value="5000"></property>
+
+		 <property name="transactionDate" value="2023-10-09"></property>
+
+	 </bean>
+
+	
+
+	 <bean id="t2" class="com.cg.demo.entity.Transaction">
+
+		 <property name="amount" value="7000"></property>
+
+		 <property name="transactionDate" value="2023-01-09"></property>
+
+	 </bean>
+
+	
+
+	 <bean id="t3" class="com.cg.demo.entity.Transaction">
+
+		 <property name="amount" value="6000"></property>
+
+		 <property name="transactionDate" value="2023-04-24"></property>
+
+	 </bean>
+
+	
+
+	
+
+	
+
+	
+
+</beans>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
